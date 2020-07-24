@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17140" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9am-gU-VJd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17115"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -211,7 +212,7 @@
                                 <rect key="frame" x="299" y="273.5" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.fill.questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-aW-uRf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-aW-uRf">
                                 <rect key="frame" x="107" y="44.5" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -238,21 +239,82 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="80.357142857142847"/>
         </scene>
-        <!--FaceID-->
+        <!--FaceID View Controller-->
         <scene sceneID="qV8-JZ-DQw">
             <objects>
-                <viewController id="bko-Sd-eY9" sceneMemberID="viewController">
+                <viewController id="bko-Sd-eY9" customClass="faceIDViewController" customModule="passcode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MP0-vX-hWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAL-HP-1Re">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8r-et-kDq">
+                                        <rect key="frame" x="50" y="133" width="315" height="547"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhq-ed-buJ">
+                                                <rect key="frame" x="100" y="213" width="114" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Log In"/>
+                                                <state key="highlighted" title="Log Out"/>
+                                                <connections>
+                                                    <action selector="tapButton:" destination="bko-Sd-eY9" eventType="touchUpInside" id="DaH-wj-xPP"/>
+                                                </connections>
+                                            </button>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Authenticate with Face ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7m-Sc-ooT">
+                                                <rect key="frame" x="35" y="313" width="245.5" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="E0W-lr-Fbz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="FaceID" image="faceid" catalog="system" id="uST-Zz-amA"/>
+                    <navigationItem key="navigationItem" id="dCt-6b-QjC"/>
+                    <connections>
+                        <outlet property="faceIDLabel" destination="T7m-Sc-ooT" id="ux6-bK-alS"/>
+                        <outlet property="loginButton" destination="mhq-ed-buJ" id="uhb-S7-jbk"/>
+                        <outlet property="stateView" destination="HAL-HP-1Re" id="HP8-wg-sN8"/>
+                        <segue destination="Rcp-tY-M5c" kind="show" identifier="loginSegue" id="4m3-NP-oTh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCj-nq-hfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="774"/>
+            <point key="canvasLocation" x="1855.072463768116" y="773.4375"/>
+        </scene>
+        <!--Jump View Controller-->
+        <scene sceneID="OPi-NW-Vc8">
+            <objects>
+                <viewController storyboardIdentifier="jumpStoryboard" id="Rcp-tY-M5c" customClass="jumpViewController" customModule="passcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k2G-v6-gmY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baaro" translatesAutoresizingMaskIntoConstraints="NO" id="vFI-9z-WW1">
+                                <rect key="frame" x="87" y="308" width="240" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2jQ-fI-dxa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JSD-WU-8jf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msm-CB-v4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2717.3913043478265" y="773.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9WN-11-Yz5">
@@ -260,25 +322,46 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9am-gU-VJd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="824-iW-O35">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ykj-ym-uor"/>
-                        <segue destination="bko-Sd-eY9" kind="relationship" relationship="viewControllers" id="UtP-8w-y7K"/>
+                        <segue destination="s0i-LA-zi9" kind="relationship" relationship="viewControllers" id="UtP-8w-y7K"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4N5-HY-ZkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="80.357142857142847"/>
         </scene>
+        <!--FaceID-->
+        <scene sceneID="8qU-J6-Aus">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0i-LA-zi9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="FaceID" image="faceid" catalog="system" id="uST-Zz-amA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ebI-Ff-H1t">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bko-Sd-eY9" kind="relationship" relationship="rootViewController" id="ONG-vX-sZO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kay-qH-R1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="773.4375"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="baaro" width="700" height="700"/>
         <image name="baaro-inWhite" width="700" height="700"/>
         <image name="circle.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="faceid" catalog="system" width="128" height="115"/>
-        <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="repeat" catalog="system" width="128" height="99"/>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

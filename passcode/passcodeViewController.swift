@@ -128,18 +128,18 @@ class passcodeViewController: UIViewController {
         }
     }
     func checkTrue(){
-        let imageTrue = UIImage(systemName: "person.fill.checkmark")
+        let imageTrue = UIImage(systemName: "checkmark")
         checkImage.image = imageTrue
         checkImage.backgroundColor = UIColor.systemGreen
         
     }
     func checkFalse(){
-        let imageFalse = UIImage(systemName: "person.fill.xmark")
+        let imageFalse = UIImage(systemName: "xmark")
         checkImage.image = imageFalse
         checkImage.backgroundColor = UIColor.systemRed
     }
     func checkImageSetDefault(){
-        let imageDefault = UIImage(systemName: "person.fill.questionmark")
+        let imageDefault = UIImage(systemName: "questionmark")
         checkImage.image = imageDefault
         checkImage.backgroundColor = UIColor.systemGray
     }
