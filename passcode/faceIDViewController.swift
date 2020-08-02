@@ -27,7 +27,8 @@ class faceIDViewController: UIViewController {
 
         // Update the UI on a change.
         didSet {
-            loginButton.isHighlighted = state == .loggedin  // The button text changes on highlight.
+            loginButton.isHighlighted = state == .loggedin
+            // The button text changes on highlight.
             stateView.backgroundColor = state == .loggedin ? .green : .red
 
             // FaceID runs right away on evaluation, so you might want to warn the user.

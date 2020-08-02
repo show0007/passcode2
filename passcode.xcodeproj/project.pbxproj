@@ -14,7 +14,6 @@
 		69DA11C824CA7A440083B47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69DA11C624CA7A440083B47E /* LaunchScreen.storyboard */; };
 		69DA11D024CA7FC90083B47E /* passcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA11CF24CA7FC90083B47E /* passcodeViewController.swift */; };
 		69DA11D224CAB0F50083B47E /* faceIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA11D124CAB0F50083B47E /* faceIDViewController.swift */; };
-		69DA11D424CABFF20083B47E /* jumpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DA11D324CABFF20083B47E /* jumpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		69DA11C924CA7A440083B47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69DA11CF24CA7FC90083B47E /* passcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passcodeViewController.swift; sourceTree = "<group>"; };
 		69DA11D124CAB0F50083B47E /* faceIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = faceIDViewController.swift; sourceTree = "<group>"; };
-		69DA11D324CABFF20083B47E /* jumpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jumpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				69DA11C924CA7A440083B47E /* Info.plist */,
 				69DA11CF24CA7FC90083B47E /* passcodeViewController.swift */,
 				69DA11D124CAB0F50083B47E /* faceIDViewController.swift */,
-				69DA11D324CABFF20083B47E /* jumpViewController.swift */,
 			);
 			path = passcode;
 			sourceTree = "<group>";
@@ -145,7 +142,6 @@
 			files = (
 				69DA11D224CAB0F50083B47E /* faceIDViewController.swift in Sources */,
 				69DA11BC24CA7A430083B47E /* AppDelegate.swift in Sources */,
-				69DA11D424CABFF20083B47E /* jumpViewController.swift in Sources */,
 				69DA11BE24CA7A430083B47E /* SceneDelegate.swift in Sources */,
 				69DA11D024CA7FC90083B47E /* passcodeViewController.swift in Sources */,
 			);

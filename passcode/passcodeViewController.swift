@@ -22,55 +22,16 @@ class passcodeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func btn1(_ sender: UIButton) {
-        inputPasscode(input:"1")
+    @IBAction func btnNum(_ sender: UIButton) {
+        inputPasscode(input:String(sender.tag))
     }
-    @IBAction func btn2(_ sender: UIButton) {
-        inputPasscode(input:"2")
-    }
-    
-    @IBAction func btn3(_ sender: UIButton) {
-        inputPasscode(input:"3")
-    }
-    
-    @IBAction func btn4(_ sender: UIButton) {
-        inputPasscode(input:"4")
-    }
-    
-    @IBAction func btn5(_ sender: UIButton) {
-        inputPasscode(input:"5")
-    }
-    
-    @IBAction func btn6(_ sender: UIButton) {
-        inputPasscode(input:"6")
-    }
-    
-    @IBAction func btn7(_ sender: UIButton) {
-        inputPasscode(input:"7")
-    }
-    
-    @IBAction func btn8(_ sender: UIButton) {
-        inputPasscode(input:"8")
-    }
-    
-    @IBAction func btn9(_ sender: UIButton) {
-        inputPasscode(input:"9")
-    }
-    
-    @IBAction func btn0(_ sender: UIButton) {
-        inputPasscode(input:"0")
-    }
-    
     @IBAction func btnDelete(_ sender: UIButton) {
         if 1...3 ~= inputPasscodeStr.count{
             inputPasscodeStr.removeLast()
         }
         showImage()
-        
-//        print(inputPasscodeStr)
     }
     @IBAction func btnReload(_ sender: UIButton) {
-//        print(inputPasscodeStr.count)
         reload()
     }
     func inputPasscode(input:String){
@@ -79,7 +40,6 @@ class passcodeViewController: UIViewController {
         }
         if inputPasscodeStr.count == 4 {
             if inputPasscodeStr == passwordStr{
-//            print("Pass")
                 checkTrue()
             }else{
                 reload()
@@ -87,7 +47,6 @@ class passcodeViewController: UIViewController {
             }
         }
         showImage()
-//        print(inputPasscodeStr)
     }
     func reload(){
         inputPasscodeStr = ""
